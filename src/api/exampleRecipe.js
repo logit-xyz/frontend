@@ -5,7 +5,7 @@ let example = {
       <span class="italic">logit</span>  is easiest, and quickest way to add nutritional
       data for online recipes directly into the Fitbit app. You can read more about
       the project <a class="underline" target={'_blank'} href="https://www.rohansogal.com/blog/summer22">here</a>!`,
-  "image": "/src/assets/sample.jpg",
+  "image": "/images/sample.jpg",
   "cookTime": "PT2M",
   "prepTime": "PT5M",
   "totalTime": "PT7M",
