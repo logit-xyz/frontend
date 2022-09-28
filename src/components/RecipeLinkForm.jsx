@@ -9,12 +9,12 @@ function RecipeLinkForm({ onSubmit }) {
     }
 
     return (
-        <div className="dark:bg-neutral-800 bg-white flex flex-col md:flex-row items-center justify-around space-y-6 md:space-x-6 md:space-y-0 lg:space-x-10 lg:space-y-0 shadow-sm rounded-lg p-5">
+        <div className="dark:bg-slate-800 bg-white flex flex-col md:flex-row items-center justify-around space-y-6 md:space-x-6 md:space-y-0 lg:space-x-10 lg:space-y-0 shadow-sm rounded-lg p-5">
             <input
                 className={
-                    `dark:bg-neutral-800 border-2 border-slate-200 
-                    dark:border-zinc-700 rounded-md w-full lg:w-3/4 p-1 lg:p-3 
-                    placeholder:text-neutral-400 dark:text-slate-50
+                    `dark:bg-slate-800 border-2 border-slate-200 
+                    dark:border-slate-700 rounded-md w-full lg:w-3/4 p-1 lg:p-3 
+                    placeholder:text-slate-400 dark:text-slate-50
                     focus:outline-none focus:ring-2 focus:ring-cyan-500/70 dark:focus:ring-cyan-300/70`
                 }
                 placeholder="Recipe URL"

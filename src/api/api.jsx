@@ -1,7 +1,7 @@
 import toast from "react-hot-toast"
 import { validLink } from "./regex"
 
-const DEBUG = false 
+const DEBUG = true 
 const apiUrl = DEBUG ? "http://localhost:8080" : "https://logit-xyz.herokuapp.com" 
 
 // log in

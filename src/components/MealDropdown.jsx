@@ -17,11 +17,11 @@ export default function MealDropdown({ selected, onChange }) {
     <div className="w-5/6">
       <Listbox value={selected} onChange={onChange}>
         <div className="relative mt-1">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg dark:bg-slate-800 dark:text-slate-50 bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">{selected.name}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <SelectorIcon
-                className="h-5 w-5 text-gray-400"
+                className="h-5 w-5 text-slate-400"
                 aria-hidden="true"
               />
             </span>
@@ -32,13 +32,13 @@ export default function MealDropdown({ selected, onChange }) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md dark:bg-slate-800 dark:text-slate-50 bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
               {mealTypes.map((meal, mealIdx) => (
                 <Listbox.Option
                   key={mealIdx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-cyan-100 text-cyan-900' : 'text-gray-900'
+                    `relative cursor-default select-none py-2 px-5 mx-2 rounded-md  ${
+                      active ? 'dark:bg-cyan-700 bg-cyan-100 dark:text-cyan-200 text-cyan-900' : 'dark:text-slate-50 text-slate-900'
                     }`
                   }
                   value={meal}

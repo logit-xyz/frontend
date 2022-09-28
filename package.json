@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -13,7 +13,8 @@
     "@heroicons/react": "^1.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.3.0"
+    "react-hot-toast": "^2.3.0",
+    "react-router-dom": "^6.4.1"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.0",
