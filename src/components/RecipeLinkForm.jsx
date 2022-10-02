@@ -13,7 +13,7 @@ function RecipeLinkForm({ onSubmit }) {
             <input
                 className={
                     `dark:bg-slate-800 border-2 border-slate-200 
-                    dark:border-slate-700 rounded-md w-full lg:w-3/4 p-1 lg:p-3 
+                    dark:border-slate-700 rounded-md w-full lg:w-3/4 p-1 px-3 lg:p-3 
                     placeholder:text-slate-400 dark:text-slate-50
                     focus:outline-none focus:ring-2 focus:ring-cyan-500/70 dark:focus:ring-cyan-300/70`
                 }
@@ -24,7 +24,7 @@ function RecipeLinkForm({ onSubmit }) {
             {/* todo: make api requests at an app level  */}
             <button
                 onClick={() => onSubmit(link)}
-                className="w-1/2 lg:w-1/4 bg-cyan-600 hover:bg-cyan-700 p-2 lg:p-3 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-slate-50 hover:text-slate-50/80 text-sm lg:text-base font-medium rounded-lg">
+                className="w-full lg:w-1/4 bg-cyan-600 hover:bg-cyan-700 p-2 lg:p-3 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-slate-50 hover:text-slate-50/80 text-sm lg:text-base font-medium rounded-md lg:rounded-lg">
                 Calculate
             </button>
         </div>

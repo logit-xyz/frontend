@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Toaster } from "react-hot-toast"
-import Nav from "./components/Nav"
+import NavBar from "./components/NavBar"
 import App from "./pages/Home"
 import { useSession } from "./hooks/useSession"
 import { useState, useEffect } from "react"
@@ -43,7 +43,7 @@ function Root() {
             {/* Navbar here */}
             <Toaster position="top-center" reverseOrder />
             <BrowserRouter>
-                <Nav user={user} />
+                <NavBar user={user} />
                 <Routes>
                     <Route path="/" element={<App user={user}/>} />
                     <Route path="/builder" element={<RecipeBuilder />} />

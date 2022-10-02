@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { login, logout } from '../api/api'
 import { useSession } from '../hooks/useSession'
+import HamburgerMenu from './HamburgerMenu'
+import Example from './HamburgerMenu'
 import Logo from './Logo'
 import Switcher from './Switcher'
 
@@ -64,8 +66,8 @@ function Nav({ user }) {
                 </div>}
             </div>
             {/* Mobile Dropdown for Navigation and Sign In and Toggling themes */}
-            <div className='md:hidden'>
-                {/* */}
+            <div className='md:hidden pt-1'>
+                <HamburgerMenu session={session} user={user}/>
             </div>
         </div>
     )

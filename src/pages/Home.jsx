@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { calculate, create_food, get_current_user } from "../api/api"
 import { example } from "../api/exampleRecipe"
 import RecipeCard from "../components/RecipeCard"
-import Nav from "../components/Nav"
+import Nav from "../components/NavBar"
 import RecipeLinkForm from "../components/RecipeLinkForm"
 import { useSafeLocalStorage } from "../hooks/useSafeLocalStorage"
 import { useSession } from "../hooks/useSession"
@@ -77,7 +77,7 @@ function App({ user }) {
         })
     }
   }
-// className="flex justify-center overflow-y-scroll pb-10"
+
   return (
     <>
       <AuthorizeAppDialog open={isAuthorizeDialogOpen} onClose={() => setIsAuthorizeDialogOpen(false)} />

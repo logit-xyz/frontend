@@ -1,5 +1,5 @@
 import { Transition, Dialog } from '@headlessui/react'
-import { XIcon, ShieldExclamationIcon } from '@heroicons/react/solid';
+import { XMarkIcon, ShieldExclamationIcon } from '@heroicons/react/24/solid';
 import { Fragment } from 'react';
 import { login } from '../api/api';
 
@@ -21,7 +21,7 @@ function AuthorizeAppDialog({ open, onClose }) {
                         {/* The actual dialog panel  */}
                         <Dialog.Panel className="w-[16rem] md:w-[25rem] lg:w-[30rem] flex flex-col items-center dark:bg-slate-900 bg-white rounded-xl text-center p-4">
                             <button onClick={onClose} className='w-full flex justify-end'>
-                                <XIcon className='h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 dark:text-slate-50 text-slate-900' />
+                                <XMarkIcon className='h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 dark:text-slate-50 text-slate-900' />
                             </button>
                             <ShieldExclamationIcon className="my-3 text-green-500 h-20 w-20 md:h-[5.5rem] md:w-[5.5rem] lg:h-24 lg:w-24 " />
                             <Dialog.Title className="font-semibold text-xl md:text-2xl lg:text-3xl dark:text-slate-50">

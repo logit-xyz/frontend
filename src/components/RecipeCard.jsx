@@ -1,5 +1,5 @@
-import { ExclamationIcon, ShareIcon } from "@heroicons/react/outline"
-import { LinkIcon } from "@heroicons/react/solid"
+import { ExclamationTriangleIcon, ShareIcon } from "@heroicons/react/24/outline"
+import { LinkIcon } from "@heroicons/react/24/solid"
 import { useEffect, useRef, useState } from "react";
 
 function HostLink({ url }) {
@@ -53,7 +53,7 @@ function RecipeCard({ loading, error, data, onLog, onCreate }) {
     } else if (error) {
         return (
             <div className="dark:bg-slate-800 bg-white h-1/2 w-full flex flex-col justify-center items-center p-8 rounded-lg text-center">
-                <ExclamationIcon className=" text-yellow-500 dark:text-yellow-400 h-20 w-20 md:h-[5.5rem] md:w-[5.5rem] lg:h-24 lg:w-24 " />
+                <ExclamationTriangleIcon className=" text-yellow-500 dark:text-yellow-400 h-20 w-20 md:h-[5.5rem] md:w-[5.5rem] lg:h-24 lg:w-24 " />
                 <p className="text-slate-900 text-lg md:text-xl lg:text-2xl dark:text-slate-50 font-semibold">
                     Couldn't calculate nutrition facts
                 </p>
@@ -116,7 +116,7 @@ function RecipeCard({ loading, error, data, onLog, onCreate }) {
                         disabled={data?.example}
                         className={`bg-cyan-600 hover:bg-cyan-700
                         dark:bg-cyan-500 dark:hover:bg-cyan-600 w-full md:w-1/2 
-                        p-2 lg:p-3 text-semibold text-slate-50 rounded-lg
+                        p-2 lg:p-3 text-semibold text-slate-50 rounded-md lg:rounded-lg
                         disabled:cursor-not-allowed 
                         dark:disabled:hover:bg-cyan-500
                         disabled:hover:bg-cyan-600`}>
@@ -128,7 +128,7 @@ function RecipeCard({ loading, error, data, onLog, onCreate }) {
                         className={`border-2 border-cyan-600 hover:border-cyan-700
                     hover:bg-cyan-200/40 dark:hover:bg-cyan-100/10 dark:border-cyan-500 
                         dark:hover:border-cyan-600 w-full md:w-1/2 p-2 lg:p-3 text-semibold 
-                        text-slate-800 dark:text-slate-50 rounded-lg
+                        text-slate-800 dark:text-slate-50 rounded-md lg:rounded-lg
                         disabled:cursor-not-allowed disabled:bg-cyan-200/0
                         disabled:border-cyan-600 disabled:dark:bg-cyan-100/0
                         disabled:dark:border-cyan-500`}>
