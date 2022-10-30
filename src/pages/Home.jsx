@@ -31,13 +31,11 @@ function App({ user }) {
           toast.success(
             "nutrition facts calculated", {
             className: "dark:bg-slate-800 dark:text-slate-50"
-          }
-          )
+          })
           setRecipe(data)
           setIsError(false)
         },
         () => {
-          // todo: send notification
           toast.error(
             "unable to calculate nutrition facts", {
             className: "dark:bg-slate-800 dark:text-slate-50"
