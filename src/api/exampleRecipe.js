@@ -47,7 +47,7 @@ let example = {
     "transFat": {
       "qty": 3.90,
       "unit": "g",
-      "name": "transFat"
+      "name": "Trans fat"
     },
     "carbohydrate": {
       "qty": 48.2,

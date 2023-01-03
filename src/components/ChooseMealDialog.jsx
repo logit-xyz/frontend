@@ -5,9 +5,9 @@ import { add_log } from '../api/api';
 import { useSession } from '../hooks/useSession';
 import MealDropdown, { mealTypes } from './MealDropdown';
 
-function ChooseMealDialog ({ recipe, open, onClose }) {
+function ChooseMealDialog ({ session, recipe, open, onClose }) {
     const [selected, setSelected] = useState(mealTypes[0])
-    const [session] = useSession()
+
 
     return (
         <Transition appear show={open} as={Fragment}>

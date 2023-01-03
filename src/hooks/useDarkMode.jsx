@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { usePrefersDarkMode } from './usePrefersDarkMode'
 import { useSafeLocalStorage } from './useSafeLocalStorage'
 
 export function useDarkMode() {

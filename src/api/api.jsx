@@ -2,26 +2,80 @@ import toast from "react-hot-toast"
 import { validLink } from "./regex"
 
 const DEBUG = true 
-const apiUrl = DEBUG ? "http://localhost:8080" : "https://logit-xyz.herokuapp.com" 
+const apiUrl = DEBUG ? "http://localhost:8080" : "https://logit.onrender.com" 
+
+function upload_img(file) {
+    // Create a new FormData object
+    var formData = new FormData();
+    // Add the image file to the FormData object
+    formData.append('image', file, file.name);
+
+    return fetch(`${apiUrl}/upload`, { 
+        method: "post",
+        body: formData,
+    })
+}
+
+function build(list_str) {
+    const ingList = list_str.split('\n') 
+    const data = {
+        list: ingList
+    }
+
+    return fetch(`${apiUrl}/build`, { 
+        method: "post",
+        body: JSON.stringify(data),
+    })
+}
 
 // log in
 function login() {
-    window.location.replace(`${apiUrl}/auth`)
+    console.log("running login code")
+    fetch(`${apiUrl}/auth`)
+        .then(res => res.json())
+        .then(res_json => {
+            if (res_json.status === 200 && res_json.data) {
+                window.location.replace(res_json.data.redirect_uri)
+            }
+        })
+}
+
+function set_session(code) {
+    return fetch(`${apiUrl}/set_session`, {
+        method: "post",
+        body: JSON.stringify({code: code})
+    })
 }
 
 // logs you out
-function logout(session) {
+// session object -> { sessonId, user }
+function logout(session, callback) {
+    const token = (!session) ? "" : session.sessionId
     // remove the session
-    window.localStorage.removeItem("sessionId")
-    window.location.replace(`${apiUrl}/logout?sess=${session}`)
+    fetch(`${apiUrl}/logout`, {
+        method: "post",
+        headers: {
+            'Authorization': token
+        }
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 200) {
+                // only remove the token if the logout was successful
+                window.localStorage.removeItem("session")
+                callback(null)
+            }
+        })
 }
 
 // gets the current active session user
 async function get_current_user(session) {
+    console.log("session", session)
+    const token = (!session) ? "" : session.sessionId
     return fetch(`${apiUrl}/me`, {
         method: "GET",
         headers: {
-            'Authorization': session
+            'Authorization': token
         }
     })
 }
@@ -70,7 +124,7 @@ function create_food(session, recipe) {
     return fetch(`${apiUrl}/create`, {
         method: "POST",
         headers: {
-            'Authorization': session
+            'Authorization': session.sessionId
         },
         body: JSON.stringify(createBody)
     })
@@ -94,7 +148,7 @@ function add_log(session, recipe, meal) {
     fetch(`${apiUrl}/log`, {
         method: "POST",
         headers: {
-            'Authorization': session
+            'Authorization': session.sessionId
         },
         body: JSON.stringify(logBody)
     })
@@ -114,8 +168,11 @@ function add_log(session, recipe, meal) {
 export {
     login,
     logout,
+    set_session,
     get_current_user,
     calculate,
     add_log,
-    create_food
+    create_food,
+    upload_img,
+    build,
 }

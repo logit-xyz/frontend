@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSafeLocalStorage } from "./useSafeLocalStorage";
 
 export function useSession() {
-  const [session, setSession] = useSafeLocalStorage("sessionId", null)
+  const [session, setSession] = useSafeLocalStorage("session", null)
 
   useEffect(() => {
     if (session === null) {

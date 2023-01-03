@@ -78,16 +78,15 @@ function RecipeCard({ loading, error, data, onLog, onCreate }) {
                         <p className="font-semibold text-lg md:text-xl lg:text-2xl" dangerouslySetInnerHTML={{__html:data?.name}} />
                         <HostLink url={data.mainEntityOfPage}/>
                         <p
-                            className="text-sm md:text-base lg:text-lg text-slate-500 dark:text-slate-400 my-5 line-clamp-3"
+                            className="text-sm md:text-base lg:text-lg text-slate-500 dark:text-slate-500 my-5 line-clamp-3"
                             dangerouslySetInnerHTML={{ __html: data?.description }} />
                     </div>
-                    {/* <ShareIcon className="h-4 w-4 md:h-5 md:w-5 hover:cursor-pointer text-slate-700 hover:text-slate-900 dark:text-slate-50 dark:hover:text-slate-300" /> */}
                 </div>
 
                 {/* ingredients */}
                 <div className="my-3">
                     <p className="text-base md:text-lg lg:text-xl font-medium tracking-tight mb-2">Ingredients</p>
-                    <ol role="list" className="marker:text-cyan-400 list-disc pl-5 space-y-2 text-slate-500 dark:text-slate-400 text-sm md:text-base lg:text-lg">
+                    <ol role="list" className="marker:text-cyan-400 list-disc pl-5 space-y-2 text-slate-500 dark:text-slate-500 text-sm md:text-base lg:text-lg">
                         {data?.recipeIngredient.map((ingredient, idx) => {
                             return (
                                 <li key={idx} dangerouslySetInnerHTML={{__html: ingredient}} />
@@ -99,13 +98,13 @@ function RecipeCard({ loading, error, data, onLog, onCreate }) {
                 <div className="my-3 w-full md:w-3/4">
                     <p className="text-base md:text-lg lg:text-xl font-medium tracking-tight mb-2">
                         Nutrition Facts{' '}
-                        <span className="text-slate-400 dark:text-slate-400 text-xs md:text-sm lg:text-base ml-1">(per serving)</span>
+                        <span className="text-slate-500 dark:text-slate-500 text-xs md:text-sm lg:text-base ml-1">(per serving)</span>
                     </p>
                     {Object.entries(data?.nutrition).map(([key, value], index) => {
                         return (
                             <div key={index} className="flex justify-between text-sm md:text-base lg:text-lg">
                                 <p className="text-semibold">{value.name}</p>
-                                <p className="text-slate-500 dark:text-slate-400">{value.qty} {value.unit}</p>
+                                <p className="text-slate-500 dark:text-slate-500">{value.qty} {value.unit}</p>
                             </div>
                         )
                     })}

@@ -29,10 +29,7 @@ const faq = [
     },
     {
         title: "Is logit affiliated with FitBit?",
-        content: `No. My name is Rohan Nagavardhan, a college junior studying
-        Computer Science at University of Michigan. logit is a product that I've building
-        by myself in my spare time. It's been a super rewarding experience and I'm
-        so thrilled at all the support I've recieved so far!` 
+        content: `No.`
     },
 ]
 
